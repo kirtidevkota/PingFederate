@@ -1,4 +1,4 @@
-pipeline{
+/*pipeline{
     agent any
     environment {     
             registry = "K8sConfig/k8scicd"
@@ -31,3 +31,12 @@ pipeline{
       
         }
     }
+*/
+node {
+  stage('Apply Kubernetes files') {
+  kubeconfig(credentialsId: 'K8sConfig', serverUrl: 'https://api-devkops-k8s-local-d6446n-439611627.ap-south-1.elb.amazonaws.com') {
+    // some block
+	sh 'kubectl apply -f .'
+	}
+  }
+}
