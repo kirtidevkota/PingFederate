@@ -5,7 +5,7 @@ pipeline {
         stage('Hello') {
             steps {
                 echo 'Hello World'
-                echo 'Testing Update'
+                echo 'Validating Update'
             }
         }
     }
