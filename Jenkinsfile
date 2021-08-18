@@ -1,5 +1,8 @@
 pipeline{
     agent any
+    environment {     
+            registry = "K8sConfig/k8scicd"
+      }
     stages {
         stage('Build Docker Image') {
             steps {
